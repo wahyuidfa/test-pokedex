@@ -35,14 +35,14 @@ const Home: React.FC = () => {
         setTitle(judul);
         setIsOpen(true);
         setIsSlide(true);
-        document.body.style.overflow = "hidden";
+        // document.body.style.overflow = "hidden";
     };
 
     const closeModal = () => {
         setIsSlide(false);
         setTimeout(() => {
             setIsOpen(false);
-            document.body.style.overflow = "auto";
+            // document.body.style.overflow = "auto";
         }, 90);
     };
     useEffect(() => {
@@ -69,21 +69,6 @@ const Home: React.FC = () => {
     useEffect(() => {
         setFilteredPokemons(pokemonList);
     }, [pokemonList]);
-
-    // const handleScroll = () => {
-    //     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
-    //     if (scrollTop + clientHeight >= scrollHeight - 20) {
-    //         // loadMorePokemon();
-    //         setLimit((prevLimit) => prevLimit + 20);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     window.addEventListener("scroll", handleScroll);
-    //     return () => {
-    //         window.removeEventListener("scroll", handleScroll);
-    //     };
-    // }, []);
 
     const handleFilterChange = async (type: string) => {
         if (type === "All") {
